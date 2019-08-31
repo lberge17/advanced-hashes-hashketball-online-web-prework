@@ -289,12 +289,22 @@ def player_with_longest_name
     info.each do |attribute, data| 
       if attribute == :players 
         data.each do |player_name, stats|
-          if stats[:points] > most_points
-            most_points = stats[:points]
+          if player_name.length > name_length
+            name_length = player_name.length
           end
         end
       end
     end
   end
-  
+  game_data.each do |location, info| 
+    info.each do |attribute, data| 
+      if attribute == :players 
+        data.each do |player_name, stats|
+          if player_name.length == name_length
+            return player_name
+          end
+        end
+      end
+    end
+  end
 end
