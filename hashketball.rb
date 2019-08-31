@@ -362,15 +362,14 @@ def long_name_steals_a_ton?
       if attribute == :players 
         data.each do |player_name, stats|
           if stats[:steals] == most_steals
-            stealer = player_name
+            if player_name == player
+              return true
+            elsif player_name != player
+              return false
+            end
           end
         end
       end
     end
-  end
-  if player_with_longest_name == stealer
-    return true
-  else
-    return false
   end
 end
