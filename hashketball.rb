@@ -362,7 +362,7 @@ def long_name_steals_a_ton?
       if attribute == :players 
         data.each do |player_name, stats|
           if stats[:steals] == most_steals
-            stealing_player = player_name
+            puts player_name
           end
         end
       end
@@ -370,9 +370,9 @@ def long_name_steals_a_ton?
   end
   puts stealing_player
   if stealing_player == player_with_longest_name
-    return TRUE
+    return true
   else
-    return FALSE
+    return false
   end
 end
 
