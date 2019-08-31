@@ -273,11 +273,13 @@ def most_points_scored
       if attribute == :players 
         data.each do |player_name, stats|
           if stats[:points] == most_points
-            return player_name
+            high_scorer = player_name
           end
         end
       end
     end
   end
-  
+  high_scorer
 end
+
+
