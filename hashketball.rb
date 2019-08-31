@@ -281,6 +281,10 @@ def most_points_scored
   end
 end
 
+def winning_team
+  
+end
+
 def player_with_longest_name
   name_length = 0
   game_data = game_hash
