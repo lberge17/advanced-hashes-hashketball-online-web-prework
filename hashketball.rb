@@ -259,9 +259,8 @@ def most_points_scored
     info.each do |attribute, data| 
       if attribute == :players 
         data.each do |player_name, stats|
-          if stats[:shoe] > shoe_size
-            shoe_size = stats[:shoe]
-            rebounds = stats[:rebounds]
+          if stats[:points] > most_points
+            most_points = stats[:points]
           end
         end
       end
