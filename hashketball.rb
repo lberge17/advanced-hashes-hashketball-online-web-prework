@@ -255,12 +255,25 @@ end
 def most_points_scored
   most_points = 0
   game_data = game_hash
+  
   game_data.each do |location, info| 
     info.each do |attribute, data| 
       if attribute == :players 
         data.each do |player_name, stats|
           if stats[:points] > most_points
             most_points = stats[:points]
+          end
+        end
+      end
+    end
+  end
+  
+  game_data.each do |location, info| 
+    info.each do |attribute, data| 
+      if attribute == :players 
+        data.each do |player_name, stats|
+          if stats[:points] == most_points
+            return player_name
           end
         end
       end
