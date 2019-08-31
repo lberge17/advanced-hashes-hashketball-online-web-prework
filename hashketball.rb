@@ -350,7 +350,7 @@ def long_name_steals_a_ton?
       if attribute == :players 
         data.each do |player_name, stats|
           if stats[:steals] > most_steals
-            most_points = stats[:steals]
+            most_steals = stats[:steals]
           end
         end
       end
