@@ -291,16 +291,25 @@ def winning_team
       info.each do |attribute, data| 
         if attribute == :players 
           data.each do |player_name, stats|
-            if stats[:points] > most_points
-              most_points = stats[:points]
-            end
+            home_score += stats[:points]
           end
         end
       end
     elsif location == :away
+      info.each do |attribute, data| 
+        if attribute == :players 
+          data.each do |player_name, stats|
+            away_score += stats[:points]
+          end
+        end
+      end
     end
   end
-  
+  if away_score > home_score
+    return "Charlotte Hornets"
+  elsif away_score < home_score
+    return "Brooklyn Nets"
+  end
 end
 
 def player_with_longest_name
