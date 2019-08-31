@@ -368,8 +368,6 @@ def long_name_steals_a_ton?
       end
     end
   end
-  puts most_steals
-  puts stealing_player
   if stealing_player == player_with_longest_name
     return true
   else
